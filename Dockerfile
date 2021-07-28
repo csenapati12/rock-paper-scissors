@@ -1,3 +1,4 @@
-FROM node:14-alpine
-
-RUN apk add -U subversion
+FROM python:3.8-slim-buster
+WORKDIR /app
+COPY . .
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
